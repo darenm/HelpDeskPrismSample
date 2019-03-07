@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Prism">
+      <HintPath>..\..\..\..\.nuget\packages\prism.core\7.1.0.431\lib\net45\Prism.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

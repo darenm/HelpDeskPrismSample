@@ -35,7 +35,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -52,12 +51,15 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
   </ItemGroup>
-
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\BannerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,43 +69,72 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\BannerView.xaml.cs">
+      <DependentUpon>BannerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Prism.Unity" Version="7.1.0.431" />
+    <PackageReference Include="Infragistics.Themes.MetroLight.Wpf">
+      <Version>1.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Unity" Version="7.1.0.431&#xD;" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\HelpDeskPrism.Infrastructure\HelpDeskPrism.Infrastructure.csproj">
+      <Project>{af12b79d-7c0e-42f0-aef4-8e42bad87f58}</Project>
+      <Name>HelpDeskPrism.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Assets\Assets.csproj">
+      <Project>{2616b4c6-e0b1-476c-bcf5-f1199e8868bf}</Project>
+      <Name>Assets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Home\Home.csproj">
+      <Project>{c8293928-ab47-4f8f-ad08-a66f6acb6743}</Project>
+      <Name>Home</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\MyIT\MyIT.csproj">
+      <Project>{6768577a-f0b3-4a77-98a5-1a7166b2565e}</Project>
+      <Name>MyIT</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\Purchasing\Purchasing.csproj">
+      <Project>{e1332354-3f1f-4ed8-90e0-988b4fa02ec7}</Project>
+      <Name>Purchasing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modules\ReportCenter\ReportCenter.csproj">
+      <Project>{c01d4c17-aa4a-4b30-b503-57881f06291a}</Project>
+      <Name>ReportCenter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assets\SoCoNet.jpeg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
