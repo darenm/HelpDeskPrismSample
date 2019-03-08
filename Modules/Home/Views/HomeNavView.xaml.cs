@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Home.Views
 {
     /// <summary>
-    /// Interaction logic for ViewA.xaml
+    /// Interaction logic for HomeNavView.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class HomeNavView : UserControl
     {
-        public ViewA()
+        public HomeNavView()
         {
             InitializeComponent();
         }

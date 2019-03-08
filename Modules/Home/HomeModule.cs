@@ -13,7 +13,9 @@ namespace Home
         public void OnInitialized(IContainerProvider containerProvider)
         {
             _regionManager = containerProvider.Resolve<IRegionManager>();
-            _regionManager.AddToRegion(RegionNames.TabBarRegion, new ViewA());
+            _regionManager.AddToRegion(RegionNames.TabBarRegion, new HomeShell());
+            _regionManager.AddToRegion(HomeRegionNames.HomeNavRegion, new HomeNavView());
+            _regionManager.AddToRegion(HomeRegionNames.HomeContentRegion, new HomeMainView());
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
